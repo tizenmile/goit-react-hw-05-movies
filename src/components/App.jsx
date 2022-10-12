@@ -110,7 +110,7 @@ export const App = () => {
               <Route path="cast" element={<Cast GetMovieCredits={GetMovieCredits} />} />
               <Route path="reviews" element={<Reviews GetMovieReviews={GetMovieReviews} />} />
             </Route>
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<Home title="Tranding today" response={GetResponse}  />} />
           </Routes>
         </div>
       </Suspense>
