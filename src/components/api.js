@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 export const GetResponse = () => {
     const [apires, setRes] = useState([])
     useEffect(() => {
-        axios.get("https://api.themoviedb.org/3/trending/all/week?", {
+        axios.get("https://api.themoviedb.org/3/trending/movie/week?", {
             params: {
                 api_key: "67ac196cc193e3f56a1e35123a2a8df8"
             }
