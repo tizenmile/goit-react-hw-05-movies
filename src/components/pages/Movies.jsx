@@ -1,4 +1,4 @@
-// import { GetMovieBySearch } from "components/api"
+import css from './Movies.module.css'
 import axios from "axios"
 import { Link } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react"
@@ -26,7 +26,7 @@ export const Movies = () => {
 
     return (
         <div>
-            <div>
+            <div className={css.search}>
                 <form onSubmit={e => {
                     e.preventDefault()
                     setSearch(e.target.search.value)

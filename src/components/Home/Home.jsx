@@ -8,6 +8,7 @@ export const Home = () => {
     const movies = apires.data.results
     return (
         <div>
+        <h1>Tranding today</h1>
             <ul>
                 {movies.map(el =>
                     <li key={el.id}>

@@ -1,0 +1,14 @@
+.castImg {
+  height: 100%;
+  width: 300px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.listCast {
+  padding-bottom: 60px;
+}

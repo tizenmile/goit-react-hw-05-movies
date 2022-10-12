@@ -1,0 +1,13 @@
+.main {
+  margin-top: 10px;
+  display: flex;
+}
+.overview {
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
