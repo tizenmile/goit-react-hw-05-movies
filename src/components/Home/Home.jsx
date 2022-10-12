@@ -1,14 +1,13 @@
-
-import { GetResponse } from "components/api";
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-export const Home = () => {
-    const apires = GetResponse()
+export const Home = ({ response }) => {
+    const apires = response()
     if (apires.length === 0) return
     const movies = apires.data.results
     return (
         <div>
-        <h1>Tranding today</h1>
+            <h1>Tranding today</h1>
             <ul>
                 {movies.map(el =>
                     <li key={el.id}>
@@ -19,4 +18,7 @@ export const Home = () => {
             </ul>
         </div>
     )
+}
+Home.propTypes = {
+    response: PropTypes.func,
 }

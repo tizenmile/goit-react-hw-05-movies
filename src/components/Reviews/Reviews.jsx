@@ -1,7 +1,7 @@
-import { GetMovieReviews } from "components/api";
-import { useParams } from "react-router-dom";
 
-export const Reviews = () => {
+import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
+export const Reviews = ({ GetMovieReviews }) => {
     const { movieId } = useParams();
     const reviews = GetMovieReviews(movieId);
     if (reviews.length === 0) return
@@ -15,4 +15,7 @@ export const Reviews = () => {
             </ul>
         </div>
     )
+}
+Reviews.propTypes = {
+    GetMovieReviews: PropTypes.func,
 }
