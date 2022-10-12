@@ -9,8 +9,8 @@ export const App = () => {
     <div>
       <div>
         <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movie</NavLink>
+          <NavLink to="/goit-react-hw-05-movies">Home</NavLink>
+          <NavLink to="/goit-react-hw-05-movies/movies">Movie</NavLink>
         </nav>
       </div>
       <div>
