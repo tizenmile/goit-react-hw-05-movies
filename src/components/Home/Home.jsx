@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-export const Home = ({ response }) => {
+const Home = ({ response }) => {
     const apires = response()
     if (apires.length === 0) return
     const movies = apires.data.results
@@ -19,6 +19,7 @@ export const Home = ({ response }) => {
         </div>
     )
 }
+export default Home
 Home.propTypes = {
     response: PropTypes.func,
 }

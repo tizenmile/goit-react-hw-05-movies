@@ -1,12 +1,14 @@
-import { Routes, Route, NavLink } from "react-router-dom";
-import { Home } from "./Home/Home";
-import { MovieDetails } from "components/MovieDetails/MovieDetails";
-import { Movies } from "components/pages/Movies";
-import { Cast } from "components/Cast/Cast";
-import { Reviews } from "components/Reviews/Reviews";
-import axios from "axios"
+import { lazy, Suspense } from "react";
 import { useCallback, useEffect, useState } from "react"
+import axios from "axios"
+import { Routes, Route, NavLink } from "react-router-dom";
 import css from './App.module.css'
+
+const Home = lazy(() => import("./Home/Home"));
+const MovieDetails = lazy(() => import("components/MovieDetails/MovieDetails"));
+const Movies = lazy(() => import("components/pages/Movies"));
+const Cast = lazy(() => import("components/Cast/Cast"));
+const Reviews = lazy(() => import("components/Reviews/Reviews"));
 export const App = () => {
 
   const GetResponse = () => {
@@ -99,17 +101,19 @@ export const App = () => {
           <NavLink className={css.nav} to="/goit-react-hw-05-movies/movies">Movie</NavLink>
         </nav>
       </div>
-      <div>
-        <Routes>
-          <Route path="/goit-react-hw-05-movies" element={<Home title="Tranding today" response={GetResponse} />} />
-          <Route path="/goit-react-hw-05-movies/movies" element={<Movies />} />
-          <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails GetMovieById={GetMovieById} />} >
-            <Route path="cast" element={<Cast GetMovieCredits={GetMovieCredits} />} />
-            <Route path="reviews" element={<Reviews GetMovieReviews={GetMovieReviews} />} />
-          </Route>
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <div>
+          <Routes>
+            <Route path="/goit-react-hw-05-movies" element={<Home title="Tranding today" response={GetResponse} />} />
+            <Route path="/goit-react-hw-05-movies/movies" element={<Movies />} />
+            <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails GetMovieById={GetMovieById} />} >
+              <Route path="cast" element={<Cast GetMovieCredits={GetMovieCredits} />} />
+              <Route path="reviews" element={<Reviews GetMovieReviews={GetMovieReviews} />} />
+            </Route>
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </div>
+      </Suspense>
     </div>
   );
 };

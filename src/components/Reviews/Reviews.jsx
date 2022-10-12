@@ -1,7 +1,7 @@
 
 import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
-export const Reviews = ({ GetMovieReviews }) => {
+const Reviews = ({ GetMovieReviews }) => {
     const { movieId } = useParams();
     const reviews = GetMovieReviews(movieId);
     if (reviews.length === 0) return
@@ -16,6 +16,7 @@ export const Reviews = ({ GetMovieReviews }) => {
         </div>
     )
 }
+export default Reviews
 Reviews.propTypes = {
     GetMovieReviews: PropTypes.func,
 }

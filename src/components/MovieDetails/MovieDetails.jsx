@@ -2,7 +2,7 @@ import { useParams, Link, Outlet } from "react-router-dom";
 import css from './MovieDetails.module.css'
 import PropTypes from 'prop-types';
 
-export const MovieDetails = ({ GetMovieById }) => {
+const MovieDetails = ({ GetMovieById }) => {
     const { movieId } = useParams();
     const movie = GetMovieById(movieId);
 
@@ -43,7 +43,7 @@ export const MovieDetails = ({ GetMovieById }) => {
         </div>
     );
 };
-
+export default MovieDetails
 MovieDetails.propTypes = {
     GetMovieById: PropTypes.func,
 }

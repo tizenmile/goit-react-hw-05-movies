@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import css from './Cast.module.css'
 import PropTypes from 'prop-types';
-export const Cast = ({ GetMovieCredits }) => {
+const Cast = ({ GetMovieCredits }) => {
     const { movieId } = useParams();
     const credits = GetMovieCredits(movieId);
     if (credits.length === 0) return
@@ -18,7 +18,7 @@ export const Cast = ({ GetMovieCredits }) => {
         </div>
     )
 }
-
+export default Cast
 Cast.propTypes = {
     GetMovieCredits: PropTypes.func,
 }
