@@ -11,7 +11,7 @@ const Home = ({ response }) => {
             <ul>
                 {movies.map(el =>
                     <li key={el.id}>
-                        <Link to={`/goit-react-hw-05-movies/movies/${el.id}`}>
+                        <Link to={`movies/${el.id}`}>
                             <p>{el.title ? el.title : el.name}</p>
                         </Link>
                     </li>)}
