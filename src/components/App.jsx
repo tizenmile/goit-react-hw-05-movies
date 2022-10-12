@@ -97,16 +97,16 @@ export const App = () => {
     <div>
       <div>
         <nav className={css.nav}>
-          <NavLink className={css.nav} to="/goit-react-hw-05-movies">Home</NavLink>
-          <NavLink className={css.nav} to="/goit-react-hw-05-movies/movies">Movie</NavLink>
+          <NavLink className={css.nav} to="/">Home</NavLink>
+          <NavLink className={css.nav} to="/movies">Movie</NavLink>
         </nav>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <div>
           <Routes>
-            <Route path="/goit-react-hw-05-movies" element={<Home title="Tranding today" response={GetResponse} />} />
-            <Route path="/goit-react-hw-05-movies/movies" element={<Movies />} />
-            <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails GetMovieById={GetMovieById} />} >
+            <Route path="/" element={<Home title="Tranding today" response={GetResponse} />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/movies/:movieId" element={<MovieDetails GetMovieById={GetMovieById} />} >
               <Route path="cast" element={<Cast GetMovieCredits={GetMovieCredits} />} />
               <Route path="reviews" element={<Reviews GetMovieReviews={GetMovieReviews} />} />
             </Route>
