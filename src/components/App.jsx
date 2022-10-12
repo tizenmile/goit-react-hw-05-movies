@@ -1,5 +1,5 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import { Home } from "components/Home/Home";
+import { Home } from "./Home/Home";
 import { MovieDetails } from "components/MovieDetails/MovieDetails";
 import { Movies } from "components/pages/Movies";
 import { Cast } from "components/Cast/Cast";
